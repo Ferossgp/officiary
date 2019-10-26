@@ -1,11 +1,18 @@
-import React from 'react';
-import Profile from './views/profile/index.js';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Profile from "./views/profile/index";
 
 function App() {
   return (
-    <div className="App">
-      <Profile />
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/profile/:id">
+            <Profile />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
