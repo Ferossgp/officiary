@@ -1,7 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "react-vis/dist/style";
 
 .text-shadow{
   text-shadow: 1px 1px 3px #000;
