@@ -9,7 +9,7 @@ import chart4 from "../../graphs/chart4.json";
 import chart5 from "../../graphs/chart5.json";
 import chart6 from "../../graphs/chart6.json";
 
-function Chart() {
+export function Chart() {
   const data = {
     x: chart1.x,
     y: chart1.y,
@@ -166,7 +166,7 @@ function Chart() {
   );
 }
 
-function Chart2() {
+export function Chart2() {
   const data2 = {
     x: chart2.x,
     y: chart2.y,
@@ -229,7 +229,7 @@ function Chart2() {
   );
 }
 
-function Chart3() {
+export function Chart3() {
   const data = {
     x: chart3.x,
     y: chart3.y,
@@ -292,7 +292,7 @@ function Chart3() {
   );
 }
 
-function Chart4() {
+export function Chart4() {
   const data = {
     x: chart4.x,
     y: chart4.y,
@@ -336,7 +336,7 @@ function Chart4() {
   );
 }
 
-function Chart5() {
+export function Chart5() {
   const data = {
     name: "ВАЗ",
     x: chart5.x1,
@@ -392,7 +392,7 @@ function Chart5() {
   );
 }
 
-function Chart6() {
+export function Chart6() {
   const data = {
     x: chart6.x,
     y: chart6.y,
@@ -446,7 +446,7 @@ function Chart6() {
   );
 }
 
-function Rating({ data }) {
+export function Rating({ data }) {
   return (
     <div className="w-1/3">
       <h1 className="text-2xl font-bold">{data.name}</h1>
@@ -461,7 +461,7 @@ function Rating({ data }) {
   );
 }
 
-function MainText() {
+export function MainText() {
   const textEl = useRef(null);
   useEffect(() => {
     // eslint-disable-next-line
@@ -503,69 +503,3 @@ function MainText() {
     </div>
   );
 }
-
-function HomeView() {
-  return (
-    <div className="bg-white shadow-l overflow-hidden">
-      <MainText />
-      <div className="w-full container mx-auto flex flex-col flex-wrap mt-0 pt-6 pb-4 py-1">
-      
-        <h2 className="text-2xl">Распределение стоимости автомобилей</h2>
-        <Chart />
-        Лидерами high-end сегмента являются Mercedes-Maybach S 560, ими владеют 12 депутатов. Эти же машины являются самыми дорогими задекларированными автомобилями.
-        Наиболее типичной машиной (200 штук) депутата является Mercedes S500, средняя стоимость которого колеблется около миллиона. 
-
-        <h2 className="text-xl mt-24">2% самых дорогих автомобиля</h2>
-        <Chart2 />
-        Любители автомобилей подороже предпочитают классику: Bentley Mulsanne, Maybach 57 и Rolls-Royce Phantom. Их стоимость начинается от 19 миллионов рублей.
-
-        <h2 className="text-xl mt-24">Остальные 98%</h2>
-        <Chart3 /> 
-        В ценовой категории до 20 миллионов рублей преобладают Mercedes-Benz S500, Toyota Land Cruiser Prado и Toyota Rav 4. 
-        Если вы хотите щегольнуть, то купите BMW X5 или Lexus RX350. 
-        <div className="flex -mx-2 items-center">
-          <div className="w-1/3 px-2 items-center flex flex-col">
-            <img src="/mercedes-benz.png"/>
-            <p>Mercedes-Benz S500</p>
-          </div>
-          <div className="w-1/3 px-2 items-center flex flex-col"><img src="/crusak.png"/><p>Toyota Land Cruiser Prado</p></div>
-          <div className="w-1/3 px-2 items-center flex flex-col"><img src="/rav4.png"/><p>Toyota Rav 4</p></div>
-        </div>
-        
-        <h2 className="text-2xl mt-24">Средняя стоимость автомобиля члена партии</h2>
-        <Chart4 />
-        Мы решили посмотреть, не отличаются ли требования членов различных партий к своим автомобилям. 
-        Оказалось, желания разнопартийцев совпадают на отметке в 1 416 000 рублей. Самыми непривередливыми являются члены КПРФ. Им хватает на 200 тысяч меньше.
-
-        
-        <h2 className="text-2xl mt-24">Доля отечественных автомобилей от общего числа автомобилей партии</h2>
-        <Chart5 />
-        
-        Для интереса, мы узнали какая доля чиновников поддерживает отечественный автопром. 
-        Лидером вышли представители КПРФ - 11% их автопарка состоят из автомобилей марки ВАЗ.
-
-        <h2 className="text-2xl mt-24">Отношение личных и совместных доходов к стоимости личного автопарка, и автопарка родственников</h2>
-        Для поиска несоответствия в декларациях, мы посчитали 4 величины:
-        <ol style={{listStyle: "symbols", paddingLeft: "40px"}}>
-          <li>Суммарный личный доход</li>
-          <li>Суммарный доход всех родственников</li>
-          <li>Суммарная стоимость всех автомобилей в личном пользовании</li>
-          <li>Суммарная стоимость всех автомобилей в пользовании родственников</li>
-        </ol>
-
-        Исходя из этих данных, мы посчитали отношение стоимости к доходам и посмотрели сколько лет понадобится, 
-        чтобы накопить на такое имущество с текущим доходом, указанным в декларации.
-        Результаты наиболее интересных деклараций мы отобразили на следующем графике. 
-        На осях графика отложены общая стоимость личного автопарка и автопарка родственников. 
-        Размером и цветов выделены личные доходы и доходы родственников соответственно.
-
-        <Chart6 />
-        
-        
-       
-      </div>
-    </div>
-  );
-}
-
-export default HomeView;
