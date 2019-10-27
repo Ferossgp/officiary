@@ -18,7 +18,7 @@ function Chart() {
     mode: "lines",
     fill: "tozeroy",
     line: {
-      color: "#8b4a93"
+      color: "#341A04"
     }
   };
   const rugplot = {
@@ -28,7 +28,7 @@ function Chart() {
     mode: "markers",
     type: "scatter",
     marker: {
-      color: "#8b4a93",
+      color: "#341A04",
       size: 4,
       line: {
         color: "white",
@@ -175,7 +175,7 @@ function Chart2() {
     mode: "lines",
     fill: "tozeroy",
     line: {
-      color: "#8b4a93"
+      color: "#341A04"
     }
   };
   const rugplot2 = {
@@ -185,7 +185,7 @@ function Chart2() {
     mode: "markers",
     type: "scatter",
     marker: {
-      color: "#8b4a93",
+      color: "#341A04",
       size: 4,
       line: {
         color: "white",
@@ -194,7 +194,7 @@ function Chart2() {
     }
   };
   return (
-    <div className="mx-auto">
+    <div>
       <Plot
         data={[data2, rugplot2]}
         layout={{
@@ -238,7 +238,7 @@ function Chart3() {
     mode: "lines",
     fill: "tozeroy",
     line: {
-      color: "#8b4a93"
+      color: "#341A04"
     }
   };
   const rugplot = {
@@ -248,7 +248,7 @@ function Chart3() {
     mode: "markers",
     type: "scatter",
     marker: {
-      color: "#8b4a93",
+      color: "#341A04",
       size: 4,
       line: {
         color: "white",
@@ -466,7 +466,7 @@ function MainText() {
   useEffect(() => {
     // eslint-disable-next-line
     var text = new Blotter.Text("Cars of Duma", {
-      family: "'EB Garamond', serif",
+      family: "Staatliches",
       size: 147,
       fill: "#fff",
       paddingLeft: 40,
@@ -509,12 +509,42 @@ function HomeView() {
     <div className="bg-white shadow-l overflow-hidden">
       <MainText />
       <div className="w-full container mx-auto flex flex-col flex-wrap mt-0 pt-6 pb-4 py-1">
+      
+        <h2 className="text-2xl">Распределение стоимости автомобилей</h2>
         <Chart />
+        Лидерами high-end сегмента являются Mercedes-Maybach S 560, ими владеют 12 депутатов. Эти же машины являются самыми дорогими задекларированными автомобилями.
+        Наиболее типичной машиной (200 штук) депутата является Mercedes S500, средняя стоимость которого колеблется около миллиона. 
+
+        <h2 className="text-xl mt-24">2% самых дорогих автомобиля</h2>
         <Chart2 />
-        <Chart3 />
+        Любители автомобилей подороже предпочитают классику: Bentley Mulsanne, Maybach 57 и Rolls-Royce Phantom. Их стоимость начинается от 19 миллионов рублей.
+
+        <h2 className="text-xl mt-24">Остальные 98%</h2>
+        <Chart3 /> 
+        В ценовой категории до 20 миллионов рублей преобладают Mercedes-Benz S500, Toyota Land Cruiser Prado и Toyota Rav 4. 
+        Если вы хотите щегольнуть, то купите BMW X5 или Lexus RX350. 
+        <div className="flex -mx-2 items-center">
+          <div className="w-1/3 px-2 items-center flex flex-col">
+            <img src="/mercedes-benz.png"/>
+            <p>Mercedes-Benz S500</p>
+          </div>
+          <div className="w-1/3 px-2 items-center flex flex-col"><img src="/crusak.png"/><p>Toyota Land Cruiser Prado</p></div>
+          <div className="w-1/3 px-2 items-center flex flex-col"><img src="/rav4.png"/><p>Toyota Rav 4</p></div>
+        </div>
+        
+        <h2 className="text-2xl mt-24">Средняя стоимость автомобиля члена партии</h2>
         <Chart4 />
+        Мы решили посмотреть, не отличаются ли требования членов различных партий к своим автомобилям. 
+        Оказалось, желания разнопартийцев совпадают на отметке в 1 600 000 рублей. 
+        
+        <h2 className="text-2xl mt-24">Доля отечественных автомобилей от общего числа автомобилей партии</h2>
         <Chart5 />
+        
+        Лидером являются представители КПРФ.
+
+        <h2 className="text-2xl mt-24">Отношение личных и совместных доходов к стоимости личного автопарка, и автопарка родственников</h2>
         <Chart6 />
+        
       </div>
     </div>
   );
