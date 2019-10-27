@@ -221,6 +221,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'EB Garamond',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',

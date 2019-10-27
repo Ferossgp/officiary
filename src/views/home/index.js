@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Plot from "react-plotly.js";
 import ListItem from "../../components/ListItem";
 
@@ -7,6 +7,7 @@ import chart2 from "../../graphs/chart2.json";
 import chart3 from "../../graphs/chart3.json";
 import chart4 from "../../graphs/chart4.json";
 import chart5 from "../../graphs/chart5.json";
+import chart6 from "../../graphs/chart6.json";
 
 function Chart() {
   const data = {
@@ -36,7 +37,7 @@ function Chart() {
     }
   };
   return (
-    <div className="my-12">
+    <div className="my-12 flex items-center flex-col">
       <Plot
         data={[data, rugplot]}
         layout={{
@@ -70,7 +71,7 @@ function Chart() {
               ay: -40
             },
             {
-              x: 9600000,
+              x: 960000,
               y: 0,
               xref: "x",
               yref: "y",
@@ -78,10 +79,10 @@ function Chart() {
               showarrow: true,
               arrowhead: 0,
               ax: 0,
-              ay: -40
+              ay: -250
             },
             {
-              x: 20000000,
+              x: 2000000,
               y: 0,
               xref: "x",
               yref: "y",
@@ -89,7 +90,7 @@ function Chart() {
               showarrow: true,
               arrowhead: 0,
               ax: 0,
-              ay: -40
+              ay: -65
             }
           ],
           images: [
@@ -108,13 +109,13 @@ function Chart() {
               yanchor: "middle"
             },
             {
-              source: "/mercedes.jpeg",
+              source: "/mercedes.png",
               xref: "x1",
               yref: "paper",
               size: "stretch",
               layer: "above",
-              x: (1 / 26) * 10.48,
-              y: 0.35,
+              x: (1 / 26) * 2.48,
+              y: 0.9,
               sizex: 0.2,
               sizey: 0.2,
               opacity: 1,
@@ -128,8 +129,8 @@ function Chart() {
               yref: "paper",
               size: "stretch",
               layer: "above",
-              x: (1 / 26) * 21,
-              y: 0.35,
+              x: (1 / 26) * 4.5,
+              y: 0.45,
               sizex: 0.1,
               sizey: 0.1,
               opacity: 1,
@@ -142,8 +143,8 @@ function Chart() {
               yref: "paper",
               size: "stretch",
               layer: "above",
-              x: (1 / 26) * 21,
-              y: 0.55,
+              x: (1 / 26) * 4.5,
+              y: 0.65,
               sizex: 0.3,
               sizey: 0.1,
               opacity: 1,
@@ -157,7 +158,7 @@ function Chart() {
           margin: {
             l: 20,
             t: 0,
-            b: 20,
+            b: 20
           }
         }}
       />
@@ -220,7 +221,7 @@ function Chart2() {
           margin: {
             l: 20,
             t: 0,
-            b: 20,
+            b: 20
           }
         }}
       />
@@ -283,7 +284,7 @@ function Chart3() {
           margin: {
             l: 20,
             t: 0,
-            b: 20,
+            b: 20
           }
         }}
       />
@@ -295,7 +296,6 @@ function Chart4() {
   const data = {
     x: chart4.x,
     y: chart4.y,
-    hoverinfo: "skip",
     type: "bar",
     marker: {
       color: ["#CC1111 ", "#FF9933", "#4488CC", "#003399"]
@@ -328,7 +328,7 @@ function Chart4() {
           margin: {
             l: 20,
             t: 0,
-            b: 20,
+            b: 20
           }
         }}
       />
@@ -341,7 +341,6 @@ function Chart5() {
     name: "ВАЗ",
     x: chart5.x1,
     y: chart5.y1,
-    hoverinfo: "skip",
     type: "bar",
     marker: {
       color: chart5.colors1
@@ -385,8 +384,62 @@ function Chart5() {
           margin: {
             l: 20,
             t: 20,
-            b: 20,
+            b: 20
           }
+        }}
+      />
+    </div>
+  );
+}
+
+function Chart6() {
+  const data = {
+    x: chart6.x,
+    y: chart6.y,
+    text: chart6.text,
+    type: "scatter",
+    mode: "markers",
+    marker: {
+      size: chart6.size,
+      color: chart6.color,
+      colorbar: {
+        title: "Доход родственников",
+        titleside: "top",
+        tickmode: "array",
+        ticks: "outside"
+      }
+    }
+  };
+  return (
+    <div className="my-12">
+      <Plot
+        data={[data]}
+        layout={{
+          xaxis: {
+            showgrid: false,
+            zeroline: false,
+            showline: false,
+            autotick: true,
+            ticks: "",
+            showticklabels: true,
+            title: "общая стоимость личного автопарка",
+            x: 0.5
+          },
+          yaxis: {
+            showgrid: false,
+            zeroline: false,
+            showline: false,
+            autotick: true,
+            ticks: "",
+            showticklabels: true,
+            title: "общая стоимость автопарка родственника",
+            y: 0.5
+          },
+          width: 1280,
+          height: 400,
+          showlegend: false,
+          barmode: "stack",
+          barnorm: "percent"
         }}
       />
     </div>
@@ -408,15 +461,60 @@ function Rating({ data }) {
   );
 }
 
+function MainText() {
+  const textEl = useRef(null);
+  useEffect(() => {
+    // eslint-disable-next-line
+    var text = new Blotter.Text("Cars of Duma", {
+      family: "'EB Garamond', serif",
+      size: 147,
+      fill: "#fff",
+      paddingLeft: 40,
+      paddingRight: 40
+    });
+
+    // eslint-disable-next-line
+    var material = new Blotter.RollingDistortMaterial();
+    material.uniforms.uRotation.value = 170;
+    material.uniforms.uSpeed.value = 0.02;
+    material.uniforms.uSineDistortCycleCount.value = 0.025;
+    material.uniforms.uSineDistortAmplitude.value = 0.1;
+    material.uniforms.uNoiseDistortAmplitude.value = 0.01;
+    material.uniforms.uNoiseDistortVolatility.value = 12;
+    // eslint-disable-next-line
+    var blotter = new Blotter(material, {
+      texts: text
+    });
+
+    var elem = textEl.current;
+    var scope = blotter.forText(text);
+
+    scope.appendTo(elem);
+  }, [textEl]);
+
+  return (
+    <div className="relative bg-gray-900">
+      <div className="flex w-full py-64" style={{height: "100vh"}}>
+        <div
+          className="mx-auto flex items-center justify-center"
+          ref={textEl}
+        ></div>
+      </div>
+    </div>
+  );
+}
+
 function HomeView() {
   return (
     <div className="bg-white shadow-l overflow-hidden">
+      <MainText />
       <div className="w-full container mx-auto flex flex-col flex-wrap mt-0 pt-6 pb-4 py-1">
         <Chart />
         <Chart2 />
         <Chart3 />
         <Chart4 />
         <Chart5 />
+        <Chart6 />
       </div>
     </div>
   );
