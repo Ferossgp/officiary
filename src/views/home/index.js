@@ -12,6 +12,7 @@ function Chart() {
   const data = {
     x: chart1.x,
     y: chart1.y,
+    hoverinfo: "skip",
     type: "scatter",
     mode: "lines",
     fill: "tozeroy",
@@ -22,6 +23,7 @@ function Chart() {
   const rugplot = {
     x: chart1.price_estimations,
     y: chart1.price_estimations.map(() => -0.00000004),
+    hoverinfo: "skip",
     mode: "markers",
     type: "scatter",
     marker: {
@@ -34,7 +36,7 @@ function Chart() {
     }
   };
   return (
-    <div>
+    <div className="my-12">
       <Plot
         data={[data, rugplot]}
         layout={{
@@ -97,8 +99,8 @@ function Chart() {
               yref: "paper",
               size: "stretch",
               layer: "above",
-              x: (1 / 26) * 25.455,
-              y: 0.45,
+              x: (1 / 26000000) * 25900000,
+              y: 0.35,
               sizex: 0.2,
               sizey: 0.2,
               opacity: 1,
@@ -111,8 +113,8 @@ function Chart() {
               yref: "paper",
               size: "stretch",
               layer: "above",
-              x: (1 / 26) * 10.08,
-              y: 0.45,
+              x: (1 / 26) * 10.48,
+              y: 0.35,
               sizex: 0.2,
               sizey: 0.2,
               opacity: 1,
@@ -127,7 +129,7 @@ function Chart() {
               size: "stretch",
               layer: "above",
               x: (1 / 26) * 21,
-              y: 0.45,
+              y: 0.35,
               sizex: 0.1,
               sizey: 0.1,
               opacity: 1,
@@ -141,7 +143,7 @@ function Chart() {
               size: "stretch",
               layer: "above",
               x: (1 / 26) * 21,
-              y: 0.65,
+              y: 0.55,
               sizex: 0.3,
               sizey: 0.1,
               opacity: 1,
@@ -152,7 +154,11 @@ function Chart() {
           width: 1280,
           height: 340,
           showlegend: false,
-          title: "A Fancy Plot"
+          margin: {
+            l: 20,
+            t: 0,
+            b: 20,
+          }
         }}
       />
     </div>
@@ -163,6 +169,7 @@ function Chart2() {
   const data2 = {
     x: chart2.x,
     y: chart2.y,
+    hoverinfo: "skip",
     type: "scatter",
     mode: "lines",
     fill: "tozeroy",
@@ -173,6 +180,7 @@ function Chart2() {
   const rugplot2 = {
     x: chart2.price_estimations,
     y: chart2.price_estimations.map(() => -0.00000004),
+    hoverinfo: "skip",
     mode: "markers",
     type: "scatter",
     marker: {
@@ -209,7 +217,11 @@ function Chart2() {
           width: 720,
           height: 400,
           showlegend: false,
-          title: "A Fancy Plot"
+          margin: {
+            l: 20,
+            t: 0,
+            b: 20,
+          }
         }}
       />
     </div>
@@ -220,6 +232,7 @@ function Chart3() {
   const data = {
     x: chart3.x,
     y: chart3.y,
+    hoverinfo: "skip",
     type: "scatter",
     mode: "lines",
     fill: "tozeroy",
@@ -230,6 +243,7 @@ function Chart3() {
   const rugplot = {
     x: chart3.price_estimations,
     y: chart3.price_estimations.map(() => -0.00000004),
+    hoverinfo: "skip",
     mode: "markers",
     type: "scatter",
     marker: {
@@ -242,7 +256,7 @@ function Chart3() {
     }
   };
   return (
-    <div>
+    <div className="my-12">
       <Plot
         data={[data, rugplot]}
         layout={{
@@ -266,7 +280,11 @@ function Chart3() {
           width: 1280,
           height: 400,
           showlegend: false,
-          title: "A Fancy Plot"
+          margin: {
+            l: 20,
+            t: 0,
+            b: 20,
+          }
         }}
       />
     </div>
@@ -277,13 +295,14 @@ function Chart4() {
   const data = {
     x: chart4.x,
     y: chart4.y,
+    hoverinfo: "skip",
     type: "bar",
     marker: {
       color: ["#CC1111 ", "#FF9933", "#4488CC", "#003399"]
     }
   };
   return (
-    <div>
+    <div className="my-12">
       <Plot
         data={[data]}
         layout={{
@@ -306,7 +325,11 @@ function Chart4() {
           width: 1280,
           height: 340,
           showlegend: false,
-          title: ""
+          margin: {
+            l: 20,
+            t: 0,
+            b: 20,
+          }
         }}
       />
     </div>
@@ -318,6 +341,7 @@ function Chart5() {
     name: "ВАЗ",
     x: chart5.x1,
     y: chart5.y1,
+    hoverinfo: "skip",
     type: "bar",
     marker: {
       color: chart5.colors1
@@ -333,7 +357,7 @@ function Chart5() {
     }
   };
   return (
-    <div>
+    <div className="my-12">
       <Plot
         data={[data, full]}
         layout={{
@@ -358,7 +382,11 @@ function Chart5() {
           showlegend: true,
           barmode: "stack",
           barnorm: "percent",
-          title: ""
+          margin: {
+            l: 20,
+            t: 20,
+            b: 20,
+          }
         }}
       />
     </div>
