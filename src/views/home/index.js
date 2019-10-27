@@ -467,7 +467,7 @@ export function MainText() {
     // eslint-disable-next-line
     var text = new Blotter.Text("Cars of Duma", {
       family: "Staatliches",
-      size: 147,
+      size: 256,
       fill: "#fff",
       paddingLeft: 40,
       paddingRight: 40
