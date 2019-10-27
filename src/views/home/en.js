@@ -7,21 +7,22 @@ function HomeView() {
     <div className="bg-white shadow-l overflow-hidden">
       <MainText />
       <div className="w-full container mx-auto flex flex-col flex-wrap mt-0 pt-6 pb-4 py-1">
-        <h2 className="text-2xl">Распределение стоимости автомобилей</h2>
+        <h2 className="text-2xl">Car cost allocation</h2>
         <Chart />
-        Лидерами high-end сегмента являются Mercedes-Maybach S 560, ими владеют
-        12 депутатов. Эти же машины являются самыми дорогими задекларированными
-        автомобилями. Наиболее типичной машиной (200 штук) депутата является
-        Mercedes S500, средняя стоимость которого колеблется около миллиона.
-        <h2 className="text-xl mt-24">2% самых дорогих автомобиля</h2>
+        The leaders of the high-end segment are Mercedes-Maybach S 560, they are owned
+12 deputies. These same cars are the most expensive declared
+cars. The most typical car (200 pieces) of a deputy is
+Mercedes S500, whose average cost ranges around a million.
+
+        <h2 className="text-xl mt-24">2% of the most expensive cars</h2>
         <Chart2 />
-        Любители автомобилей подороже предпочитают классику: Bentley Mulsanne,
-        Maybach 57 и Rolls-Royce Phantom. Их стоимость начинается от 19
-        миллионов рублей.
-        <h2 className="text-xl mt-24">Остальные 98%</h2>
-        <Chart3 />В ценовой категории до 20 миллионов рублей преобладают
-        Mercedes-Benz S500, Toyota Land Cruiser Prado и Toyota Rav 4. Если вы
-        хотите щегольнуть, то купите BMW X5 или Lexus RX350.
+        Car lovers prefer a classic more expensive: Bentley Mulsanne,
+         Maybach 57 and Rolls-Royce Phantom. Their cost starts at 19
+         million rubles.
+        <h2 className="text-xl mt-24">The remaining 98%/h2>
+        <Chart3 />In the price category up to 20 million rubles prevail
+         Mercedes-Benz S500, Toyota Land Cruiser Prado and Toyota Rav 4. If you
+         If you want to flaunt, then buy a BMW X5 or Lexus RX350.
         <div className="flex -mx-2 items-center">
           <div className="w-1/3 px-2 items-center flex flex-col">
             <img src="/mercedes-benz.png" />
@@ -37,39 +38,39 @@ function HomeView() {
           </div>
         </div>
         <h2 className="text-2xl mt-24">
-          Средняя стоимость автомобиля члена партии
+        The average cost of a car for a party member
         </h2>
         <Chart4 />
-        Мы решили посмотреть, не отличаются ли требования членов различных
-        партий к своим автомобилям. Оказалось, желания разнопартийцев совпадают
-        на отметке в 1 416 000 рублей. Самыми непривередливыми являются члены
-        КПРФ. Им хватает на 200 тысяч меньше.
+        We decided to see if the requirements of the members of the various
+         batches to your cars. It turned out that the wishes of the opposite parties coincide
+         at the mark of 1,416,000 rubles. The most picky are the members
+         Communist Party. They have enough for 200 thousand less.
+
         <h2 className="text-2xl mt-24">
-          Доля отечественных автомобилей от общего числа автомобилей партии
+        The share of domestic cars from the total number of party cars
         </h2>
         <Chart5 />
-        Для интереса, мы узнали какая доля чиновников поддерживает отечественный
-        автопром. Лидером вышли представители КПРФ - 11% их автопарка состоят из
-        автомобилей марки ВАЗ.
+        For interest, we found out what proportion of officials supports domestic
+         auto industry. The leaders were representatives of the Communist Party - 11% of their fleet consist of
+         VAZ cars.
         <h2 className="text-2xl mt-24">
-          Отношение личных и совместных доходов к стоимости личного автопарка, и
-          автопарка родственников
-        </h2>
-        Для поиска несоответствия в декларациях, мы посчитали 4 величины:
+        The ratio of personal and joint income to the cost of a personal fleet, and
+           fleet of relatives
+        </h2>To search for inconsistencies in the declarations, we calculated 4 values:</h2>
         <ol style={{ listStyle: "symbols", paddingLeft: "40px" }}>
-          <li>Суммарный личный доход</li>
-          <li>Суммарный доход всех родственников</li>
-          <li>Суммарная стоимость всех автомобилей в личном пользовании</li>
+          <li>Total personal income</li>
+          <li>Total income of all relatives</li>
+          <li>The total cost of all cars in personal use</li>
           <li>
-            Суммарная стоимость всех автомобилей в пользовании родственников
+          The total value of all cars used by relatives
           </li>
         </ol>
-        Исходя из этих данных, мы посчитали отношение стоимости к доходам и
-        посмотрели сколько лет понадобится, чтобы накопить на такое имущество с
-        текущим доходом, указанным в декларации. Результаты наиболее интересных
-        деклараций мы отобразили на следующем графике. На осях графика отложены
-        общая стоимость личного автопарка и автопарка родственников. Размером и
-        цветов выделены личные доходы и доходы родственников соответственно.
+        Based on these data, we calculated the ratio of value to income and
+         looked how many years it will take to accumulate on such property with
+         current income indicated in the declaration. Results of the most interesting
+         declarations we displayed on the following chart. On the axes of the graph are plotted
+         the total cost of a personal fleet and a fleet of relatives. Size and
+         colors highlighted personal income and income of relatives, respectively.
         <Chart6 />
       </div>
     </div>
