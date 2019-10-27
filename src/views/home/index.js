@@ -315,6 +315,7 @@ function Chart4() {
 
 function Chart5() {
   const data = {
+    name: "ВАЗ",
     x: chart5.x1,
     y: chart5.y1,
     type: "bar",
@@ -323,6 +324,7 @@ function Chart5() {
     }
   };
   const full = {
+    name: "Другие Марки",
     x: chart5.x2,
     y: chart5.y2,
     type: "bar",
@@ -353,7 +355,7 @@ function Chart5() {
           },
           width: 1280,
           height: 400,
-          showlegend: false,
+          showlegend: true,
           barmode: "stack",
           barnorm: "percent",
           title: ""
